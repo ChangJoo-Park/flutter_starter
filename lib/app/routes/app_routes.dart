@@ -9,6 +9,9 @@ abstract class Routes {
   static const SIGNUP_EMAIL = _Paths.SIGNUP_EMAIL;
   static const RECOVERY_EMAIL = _Paths.RECOVERY_EMAIL;
   static const RECOVERY_PASSWORD = _Paths.RECOVERY_PASSWORD;
+  static const PROFILE = _Paths.PROFILE;
+  static const SETTING = _Paths.SETTING;
+  static const NOTICE = _Paths.NOTICE;
 }
 
 abstract class _Paths {
@@ -19,4 +22,7 @@ abstract class _Paths {
   static const SIGNUP_EMAIL = '/signup-email';
   static const RECOVERY_EMAIL = '/recovery-email';
   static const RECOVERY_PASSWORD = '/recovery-password';
+  static const PROFILE = '/profile';
+  static const SETTING = '/setting';
+  static const NOTICE = '/notice';
 }

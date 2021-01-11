@@ -81,13 +81,13 @@ class SigninView extends GetView<SigninController> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Get.toNamed(AppPages.RECOVER_EMAIL);
+                        Get.toNamed(Routes.RECOVERY_EMAIL);
                       },
                       child: Text(labels.auth.menu.recoverEmail),
                     ),
                     TextButton(
                       onPressed: () {
-                        Get.toNamed(AppPages.RECOVER_PASSWORD);
+                        Get.toNamed(Routes.RECOVERY_PASSWORD);
                       },
                       child: Text(labels.auth.menu.recoverPassword),
                     ),
@@ -140,7 +140,7 @@ class SigninView extends GetView<SigninController> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Get.toNamed(AppPages.SIGNUP_EMAIL);
+                    Get.toNamed(Routes.SIGNUP_EMAIL);
                   },
                   child: Text(labels.auth.menu.signupEmail),
                 ),
