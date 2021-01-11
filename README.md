@@ -45,6 +45,12 @@ flutter pub get
 
 미구현
 
+### 로딩
+
+HTTP 요청 등 긴 작업을 해야할 때 사용자의 입력을 막으려면 `showLoadingIndicator` 메소드를 실행하세요
+
+작업을 마치고 로딩 화면을 없애려면 `hideLoadingIndicator`  메소드를 실행하세요.
+
 ## 페이지
 
 ### 인증 페이지
@@ -56,4 +62,5 @@ flutter pub get
 ### 이메일 회원 가입 페이지
 
 <img src="./images/signup.png" height="300px">
+
 
