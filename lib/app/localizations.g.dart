@@ -44,6 +44,14 @@ class AppLocalizations {
           recoverPassword: '비밀번호를 잃어버렸어요',
           signupEmail: '이메일로 회원가입하기',
         ),
+        validation: AppLocalizations_Labels_Auth_Validation(
+          email: '올바른 이메일을 입력해주세요',
+          password: '올바른 비밀번호를 입력해주세요',
+        ),
+        placeholder: AppLocalizations_Labels_Auth_Placeholder(
+          email: '이메일',
+          password: '비밀번호',
+        ),
       ),
       dates: AppLocalizations_Labels_Dates(
         weekday: AppLocalizations_Labels_Dates_Weekday(
@@ -117,6 +125,14 @@ class AppLocalizations {
           recoverEmail: 'Forogt an email address',
           recoverPassword: 'Forgot a password',
           signupEmail: 'Sign Up with Email',
+        ),
+        validation: AppLocalizations_Labels_Auth_Validation(
+          email: 'Enter valid email.',
+          password: 'Enter valid password.',
+        ),
+        placeholder: AppLocalizations_Labels_Auth_Placeholder(
+          email: 'Email',
+          password: 'Password',
         ),
       ),
       dates: AppLocalizations_Labels_Dates(
@@ -323,14 +339,61 @@ class AppLocalizations_Labels_Auth_Menu {
   }
 }
 
+class AppLocalizations_Labels_Auth_Validation {
+  const AppLocalizations_Labels_Auth_Validation({this.email, this.password});
+
+  final String email;
+
+  final String password;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'email':
+        return email;
+      case 'password':
+        return password;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Auth_Placeholder {
+  const AppLocalizations_Labels_Auth_Placeholder({this.email, this.password});
+
+  final String email;
+
+  final String password;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'email':
+        return email;
+      case 'password':
+        return password;
+      default:
+        return '';
+    }
+  }
+}
+
 class AppLocalizations_Labels_Auth {
-  const AppLocalizations_Labels_Auth({this.signout, this.signin, this.menu});
+  const AppLocalizations_Labels_Auth(
+      {this.signout,
+      this.signin,
+      this.menu,
+      this.validation,
+      this.placeholder});
 
   final String signout;
 
   final AppLocalizations_Labels_Auth_Signin signin;
 
   final AppLocalizations_Labels_Auth_Menu menu;
+
+  final AppLocalizations_Labels_Auth_Validation validation;
+
+  final AppLocalizations_Labels_Auth_Placeholder placeholder;
 
   String getByKey(String key) {
     switch (key) {
