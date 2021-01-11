@@ -3,8 +3,18 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   static const HOME = _Paths.HOME;
+  static const SIGNIN = _Paths.SIGNIN;
+  static const SIGNUP_OAUTH = _Paths.SIGNUP_OAUTH;
+  static const SIGNUP_EMAIL = _Paths.SIGNUP_EMAIL;
+  static const RECOVERY_EMAIL = _Paths.RECOVERY_EMAIL;
+  static const RECOVERY_PASSWORD = _Paths.RECOVERY_PASSWORD;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
+  static const SIGNIN = '/signin';
+  static const SIGNUP_OAUTH = '/signup-oauth';
+  static const SIGNUP_EMAIL = '/signup-email';
+  static const RECOVERY_EMAIL = '/recovery-email';
+  static const RECOVERY_PASSWORD = '/recovery-password';
 }
