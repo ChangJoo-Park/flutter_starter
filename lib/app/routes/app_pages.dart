@@ -1,3 +1,5 @@
+import 'package:flutter_getx_app_template/app/modules/splash/bindings/splash_binding.dart';
+import 'package:flutter_getx_app_template/app/modules/splash/views/splash_view.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_getx_app_template/app/modules/home/bindings/home_binding.dart';
@@ -16,9 +18,14 @@ import 'package:flutter_getx_app_template/app/modules/signup_oauth/views/signup_
 part 'app_routes.dart';
 
 class AppPages {
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => SplashView(),
+      binding: SplashBinding(),
+    ),
     GetPage(
       name: _Paths.HOME,
       page: () => HomeView(),

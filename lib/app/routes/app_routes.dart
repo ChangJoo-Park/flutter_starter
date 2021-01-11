@@ -2,6 +2,7 @@ part of 'app_pages.dart';
 // DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
 abstract class Routes {
+  static const SPLASH = _Paths.SPLASH;
   static const HOME = _Paths.HOME;
   static const SIGNIN = _Paths.SIGNIN;
   static const SIGNUP_OAUTH = _Paths.SIGNUP_OAUTH;
@@ -11,6 +12,7 @@ abstract class Routes {
 }
 
 abstract class _Paths {
+  static const SPLASH = '/';
   static const HOME = '/home';
   static const SIGNIN = '/signin';
   static const SIGNUP_OAUTH = '/signup-oauth';
