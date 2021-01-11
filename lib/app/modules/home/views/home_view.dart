@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_app_template/app/controllers/controllers.dart';
 import 'package:flutter_getx_app_template/app/localizations.dart';
 import 'package:flutter_getx_app_template/app/routes/app_pages.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
 
@@ -15,6 +16,8 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     final AuthController authController = AuthController.to;
     final LanguageController languageController = LanguageController.to;
+    final BottomNavigationController bottomNavigationController =
+        BottomNavigationController.to;
     final labels = AppLocalizations.of(context);
 
     return Scaffold(
@@ -62,14 +65,19 @@ class HomeView extends GetView<HomeController> {
       ),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(),
+          SliverAppBar(
+            floating: true,
+            stretch: true,
+          ),
           SliverToBoxAdapter(
             child: Column(
               children: [
                 Center(
-                  child: Text(
-                    'HomeView is working',
-                    style: TextStyle(fontSize: 20),
+                  child: Obx(
+                    () => Text(
+                      'HomeView is working ${bottomNavigationController.currentPageIndex.value}',
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
                 ),
                 ElevatedButton(
@@ -81,8 +89,24 @@ class HomeView extends GetView<HomeController> {
                 )
               ],
             ),
-          )
+          ),
+          SliverFillRemaining(),
         ],
+      ),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          currentIndex: bottomNavigationController.currentPageIndex.value,
+          onTap: (int index) {
+            bottomNavigationController.currentPageIndex.value = index;
+          },
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.notifications), label: 'Notifications'),
+            BottomNavigationBarItem(
+                icon: Icon(FontAwesomeIcons.store), label: 'Shop'),
+          ],
+        ),
       ),
     );
   }

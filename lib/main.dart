@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_app_template/app/components/loading_component.dart';
-import 'package:flutter_getx_app_template/app/constants/constants.dart';
 import 'package:flutter_getx_app_template/app/controllers/controllers.dart';
 import 'package:flutter_getx_app_template/app/localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,6 +15,7 @@ void main() async {
   Get.put<AuthController>(AuthController());
   Get.put<ThemeController>(ThemeController());
   Get.put<LanguageController>(LanguageController());
+  Get.put<BottomNavigationController>(BottomNavigationController());
 
   runApp(MyApp());
 }
