@@ -64,3 +64,18 @@ HTTP 요청 등 긴 작업을 해야할 때 사용자의 입력을 막으려면 
 <img src="./images/signup.png" height="300px">
 
 
+## 기타
+
+### get 라이브러리 업데이트
+
+get_cli 라이브러리는 pubspec.yaml을 읽어 명령어를 수행합니다. symver를 이용하면 오류가 발생합니다.
+
+get 라이브러리를 업데이트하려면 https://pub.dev 에서 버전을 확인 후 입력해주세요
+
+```yaml
+# 오류가 발생할 수 있습니다.
+get: ^3.24.0
+
+# 작동합니다.
+get: 3.24.0
+```
