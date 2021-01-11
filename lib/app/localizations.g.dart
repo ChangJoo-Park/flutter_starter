@@ -14,57 +14,111 @@ class AppLocalizations {
   final Locale locale;
 
   static final Map<Locale, AppLocalizations_Labels> languages = {
-    Locale.fromSubtags(languageCode: 'fr'): AppLocalizations_Labels(
-      multiline: 'C\'est\n\nune\n\nexemple multiligne.',
+    Locale.fromSubtags(languageCode: 'ko'): AppLocalizations_Labels(
+      multiline: '',
+      drawer: AppLocalizations_Labels_Drawer(
+        menu: AppLocalizations_Labels_Drawer_Menu(
+          profile: '프로필',
+          notice: '공지사항',
+          language: '언어 설정',
+          setting: '설정',
+        ),
+        language: AppLocalizations_Labels_Drawer_Language(
+          dialog: AppLocalizations_Labels_Drawer_Language_Dialog(
+            title: '언어 설정',
+          ),
+          option: AppLocalizations_Labels_Drawer_Language_Option(
+            korean: '한국어',
+            english: 'English',
+          ),
+        ),
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        signout: '로그아웃',
+        signin: AppLocalizations_Labels_Auth_Signin(
+          email: '이메일로 로그인',
+          oauth: ({provider}) => '''${provider}로 로그인''',
+        ),
+        menu: AppLocalizations_Labels_Auth_Menu(
+          recoverEmail: '이메일을 잃어버렸어요',
+          recoverPassword: '비밀번호를 잃어버렸어요',
+          signupEmail: '이메일로 회원가입하기',
+        ),
+      ),
       dates: AppLocalizations_Labels_Dates(
         weekday: AppLocalizations_Labels_Dates_Weekday(
-          monday: 'LUNDI',
-          tuesday: 'Mardi',
-          wednesday: 'Mercredi',
-          thursday: 'Jeudi',
-          friday: 'Vendredi',
-          saturday: 'samedi',
-          sunday: 'dimanche',
+          monday: '',
+          tuesday: '',
+          wednesday: '',
+          thursday: '',
+          friday: '',
+          saturday: '',
+          sunday: '',
         ),
         month: AppLocalizations_Labels_Dates_Month(
-          january: 'janvier',
-          february: 'février',
-          march: 'février',
-          april: 'avril',
+          january: '',
+          february: '',
+          march: '',
+          april: '',
         ),
       ),
       templated: AppLocalizations_Labels_Templated(
-        hello: ({firstName}) => '''Bonjour ${firstName}!''',
-        contact: (condition, {lastName}) {
-          if (condition == Gender.male) return '''M. ${lastName}''';
-          if (condition == Gender.female) return '''Mme ${lastName}''';
+        hello: '',
+        contact: (condition) {
+          if (condition == Gender.male) return '''''';
+          if (condition == Gender.female) return '''''';
           throw Exception();
         },
         numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({count}) =>
-              '''Il y a ${NumberFormat(null, 'fr').format(count)} éléments.''',
-          simple: ({price}) =>
-              '''Le prix est de ${NumberFormat(null, 'fr').format(price)}€''',
-          formatted: ({price}) =>
-              '''Le prix est de ${NumberFormat.compactCurrency(locale: 'fr').format(price)}''',
+          count: '',
+          simple: '',
+          formatted: '',
         ),
         date: AppLocalizations_Labels_Templated_Date(
-          simple: ({date}) => '''Aujourd'hui : ${date.toIso8601String()}''',
-          pattern: ({date}) =>
-              '''Aujourd'hui : ${DateFormat('EEE, M/d/y', 'fr').format(date)}''',
+          simple: '',
+          pattern: '',
         ),
       ),
       plurals: AppLocalizations_Labels_Plurals(
         man: (condition) {
-          if (condition == Plural.zero) return '''hommes''';
-          if (condition == Plural.one) return '''homme''';
-          if (condition == Plural.multiple) return '''hommes''';
+          if (condition == Plural.zero) return '''''';
+          if (condition == Plural.one) return '''''';
+          if (condition == Plural.multiple) return '''''';
           throw Exception();
         },
       ),
     ),
     Locale.fromSubtags(languageCode: 'en'): AppLocalizations_Labels(
       multiline: 'This is\n\na\n\nmultiline example.',
+      drawer: AppLocalizations_Labels_Drawer(
+        menu: AppLocalizations_Labels_Drawer_Menu(
+          profile: 'Profile',
+          notice: 'Notice',
+          language: 'Locale',
+          setting: 'Settings',
+        ),
+        language: AppLocalizations_Labels_Drawer_Language(
+          dialog: AppLocalizations_Labels_Drawer_Language_Dialog(
+            title: 'Select locale',
+          ),
+          option: AppLocalizations_Labels_Drawer_Language_Option(
+            korean: '한국어',
+            english: 'English',
+          ),
+        ),
+      ),
+      auth: AppLocalizations_Labels_Auth(
+        signout: 'Sign Out',
+        signin: AppLocalizations_Labels_Auth_Signin(
+          email: 'Sign In with Email',
+          oauth: ({provider}) => '''Sign In with ${provider}''',
+        ),
+        menu: AppLocalizations_Labels_Auth_Menu(
+          recoverEmail: 'Forogt an email address',
+          recoverPassword: 'Forgot a password',
+          signupEmail: 'Sign Up with Email',
+        ),
+      ),
       dates: AppLocalizations_Labels_Dates(
         weekday: AppLocalizations_Labels_Dates_Weekday(
           monday: 'MONDAY',
@@ -83,24 +137,20 @@ class AppLocalizations {
         ),
       ),
       templated: AppLocalizations_Labels_Templated(
-        hello: ({firstName}) => '''Hello ${firstName}!''',
-        contact: (condition, {lastName}) {
-          if (condition == Gender.male) return '''Mr ${lastName}!''';
-          if (condition == Gender.female) return '''Mrs ${lastName}!''';
+        hello: 'Hello {{first_name}}!',
+        contact: (condition) {
+          if (condition == Gender.male) return '''Mr {{last_name}}!''';
+          if (condition == Gender.female) return '''Mrs {{last_name}}!''';
           throw Exception();
         },
         numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({count}) =>
-              '''There are ${NumberFormat(null, 'en').format(count)}\ items.''',
-          simple: ({price}) =>
-              '''The price is ${NumberFormat(null, 'en').format(price)}\$''',
-          formatted: ({price}) =>
-              '''The price is ${NumberFormat.compactCurrency(locale: 'en').format(price)}''',
+          count: 'There are {{count:int}}\ items.',
+          simple: 'The price is {{price:double}}\$',
+          formatted: 'The price is {{price:double[compactCurrency]}}',
         ),
         date: AppLocalizations_Labels_Templated_Date(
-          simple: ({date}) => '''Today : ${date.toIso8601String()}''',
-          pattern: ({date}) =>
-              '''Today : ${DateFormat('EEE, M/d/y', 'en').format(date)}''',
+          simple: 'Today : {{date:DateTime}}',
+          pattern: 'Today : {{date:DateTime[EEE, M/d/y]}}',
         ),
       ),
       plurals: AppLocalizations_Labels_Plurals(
@@ -108,58 +158,6 @@ class AppLocalizations {
           if (condition == Plural.zero) return '''man''';
           if (condition == Plural.one) return '''man''';
           if (condition == Plural.multiple) return '''men''';
-          throw Exception();
-        },
-      ),
-    ),
-    Locale.fromSubtags(
-        languageCode: 'zh',
-        scriptCode: 'Hans',
-        countryCode: 'CN'): AppLocalizations_Labels(
-      multiline: '这是\n\n一种\n\n多例子。',
-      dates: AppLocalizations_Labels_Dates(
-        weekday: AppLocalizations_Labels_Dates_Weekday(
-          monday: '星期一',
-          tuesday: '星期二',
-          wednesday: '星期三',
-          thursday: '星期四',
-          friday: '星期五',
-          saturday: '星期六',
-          sunday: '星期日',
-        ),
-        month: AppLocalizations_Labels_Dates_Month(
-          january: '一月',
-          february: '二月',
-          march: '游行',
-          april: '四月',
-        ),
-      ),
-      templated: AppLocalizations_Labels_Templated(
-        hello: ({firstName}) => '''你好${firstName}!''',
-        contact: (condition, {lastName}) {
-          if (condition == Gender.male) return '''先生${lastName}''';
-          if (condition == Gender.female) return '''夫人${lastName}''';
-          throw Exception();
-        },
-        numbers: AppLocalizations_Labels_Templated_Numbers(
-          count: ({count}) =>
-              '''${NumberFormat(null, 'zh-Hans-CN').format(count)}個のアイテムがあります''',
-          simple: ({price}) =>
-              '''価格は${NumberFormat(null, 'zh-Hans-CN').format(price)}¥です''',
-          formatted: ({price}) =>
-              '''価格は${NumberFormat.compactCurrency(locale: 'zh-Hans-CN').format(price)}です''',
-        ),
-        date: AppLocalizations_Labels_Templated_Date(
-          simple: ({date}) => '''今日 : ${date.toIso8601String()}''',
-          pattern: ({date}) =>
-              '''今日 : ${DateFormat('EEE, M/d/y', 'zh-Hans-CN').format(date)}''',
-        ),
-      ),
-      plurals: AppLocalizations_Labels_Plurals(
-        man: (condition) {
-          if (condition == Plural.zero) return '''男人''';
-          if (condition == Plural.one) return '''男人''';
-          if (condition == Plural.multiple) return '''男人''';
           throw Exception();
         },
       ),
@@ -180,6 +178,168 @@ enum Plural {
   zero,
   one,
   multiple,
+}
+
+class AppLocalizations_Labels_Drawer_Menu {
+  const AppLocalizations_Labels_Drawer_Menu(
+      {this.profile, this.notice, this.language, this.setting});
+
+  final String profile;
+
+  final String notice;
+
+  final String language;
+
+  final String setting;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'profile':
+        return profile;
+      case 'notice':
+        return notice;
+      case 'language':
+        return language;
+      case 'setting':
+        return setting;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Drawer_Language_Dialog {
+  const AppLocalizations_Labels_Drawer_Language_Dialog({this.title});
+
+  final String title;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'title':
+        return title;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Drawer_Language_Option {
+  const AppLocalizations_Labels_Drawer_Language_Option(
+      {this.korean, this.english});
+
+  final String korean;
+
+  final String english;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'korean':
+        return korean;
+      case 'english':
+        return english;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Drawer_Language {
+  const AppLocalizations_Labels_Drawer_Language({this.dialog, this.option});
+
+  final AppLocalizations_Labels_Drawer_Language_Dialog dialog;
+
+  final AppLocalizations_Labels_Drawer_Language_Option option;
+
+  String getByKey(String key) {
+    switch (key) {
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Drawer {
+  const AppLocalizations_Labels_Drawer({this.menu, this.language});
+
+  final AppLocalizations_Labels_Drawer_Menu menu;
+
+  final AppLocalizations_Labels_Drawer_Language language;
+
+  String getByKey(String key) {
+    switch (key) {
+      default:
+        return '';
+    }
+  }
+}
+
+typedef AppLocalizations_Labels_Auth_Signin_oauth = String Function(
+    {@required String provider});
+
+class AppLocalizations_Labels_Auth_Signin {
+  const AppLocalizations_Labels_Auth_Signin(
+      {this.email, AppLocalizations_Labels_Auth_Signin_oauth oauth})
+      : _oauth = oauth;
+
+  final String email;
+
+  final AppLocalizations_Labels_Auth_Signin_oauth _oauth;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'email':
+        return email;
+      default:
+        return '';
+    }
+  }
+
+  String oauth({@required String provider}) => _oauth(
+        provider: provider,
+      );
+}
+
+class AppLocalizations_Labels_Auth_Menu {
+  const AppLocalizations_Labels_Auth_Menu(
+      {this.recoverEmail, this.recoverPassword, this.signupEmail});
+
+  final String recoverEmail;
+
+  final String recoverPassword;
+
+  final String signupEmail;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'recoverEmail':
+        return recoverEmail;
+      case 'recoverPassword':
+        return recoverPassword;
+      case 'signupEmail':
+        return signupEmail;
+      default:
+        return '';
+    }
+  }
+}
+
+class AppLocalizations_Labels_Auth {
+  const AppLocalizations_Labels_Auth({this.signout, this.signin, this.menu});
+
+  final String signout;
+
+  final AppLocalizations_Labels_Auth_Signin signin;
+
+  final AppLocalizations_Labels_Auth_Menu menu;
+
+  String getByKey(String key) {
+    switch (key) {
+      case 'signout':
+        return signout;
+      default:
+        return '';
+    }
+  }
 }
 
 class AppLocalizations_Labels_Dates_Weekday {
@@ -271,91 +431,61 @@ class AppLocalizations_Labels_Dates {
   }
 }
 
-typedef AppLocalizations_Labels_Templated_hello = String Function(
-    {@required String firstName});
-typedef AppLocalizations_Labels_Templated_contact = String
-    Function(Gender condition, {@required String lastName});
-typedef AppLocalizations_Labels_Templated_Numbers_count = String Function(
-    {@required int count});
-typedef AppLocalizations_Labels_Templated_Numbers_simple = String Function(
-    {@required double price});
-typedef AppLocalizations_Labels_Templated_Numbers_formatted = String Function(
-    {@required double price});
+typedef AppLocalizations_Labels_Templated_contact = String Function(
+    Gender condition);
 
 class AppLocalizations_Labels_Templated_Numbers {
   const AppLocalizations_Labels_Templated_Numbers(
-      {AppLocalizations_Labels_Templated_Numbers_count count,
-      AppLocalizations_Labels_Templated_Numbers_simple simple,
-      AppLocalizations_Labels_Templated_Numbers_formatted formatted})
-      : _count = count,
-        _simple = simple,
-        _formatted = formatted;
+      {this.count, this.simple, this.formatted});
 
-  final AppLocalizations_Labels_Templated_Numbers_count _count;
+  final String count;
 
-  final AppLocalizations_Labels_Templated_Numbers_simple _simple;
+  final String simple;
 
-  final AppLocalizations_Labels_Templated_Numbers_formatted _formatted;
+  final String formatted;
 
   String getByKey(String key) {
     switch (key) {
+      case 'count':
+        return count;
+      case 'simple':
+        return simple;
+      case 'formatted':
+        return formatted;
       default:
         return '';
     }
   }
-
-  String count({@required int count}) => _count(
-        count: count,
-      );
-  String simple({@required double price}) => _simple(
-        price: price,
-      );
-  String formatted({@required double price}) => _formatted(
-        price: price,
-      );
 }
 
-typedef AppLocalizations_Labels_Templated_Date_simple = String Function(
-    {@required DateTime date});
-typedef AppLocalizations_Labels_Templated_Date_pattern = String Function(
-    {@required DateTime date});
-
 class AppLocalizations_Labels_Templated_Date {
-  const AppLocalizations_Labels_Templated_Date(
-      {AppLocalizations_Labels_Templated_Date_simple simple,
-      AppLocalizations_Labels_Templated_Date_pattern pattern})
-      : _simple = simple,
-        _pattern = pattern;
+  const AppLocalizations_Labels_Templated_Date({this.simple, this.pattern});
 
-  final AppLocalizations_Labels_Templated_Date_simple _simple;
+  final String simple;
 
-  final AppLocalizations_Labels_Templated_Date_pattern _pattern;
+  final String pattern;
 
   String getByKey(String key) {
     switch (key) {
+      case 'simple':
+        return simple;
+      case 'pattern':
+        return pattern;
       default:
         return '';
     }
   }
-
-  String simple({@required DateTime date}) => _simple(
-        date: date,
-      );
-  String pattern({@required DateTime date}) => _pattern(
-        date: date,
-      );
 }
 
 class AppLocalizations_Labels_Templated {
   const AppLocalizations_Labels_Templated(
-      {AppLocalizations_Labels_Templated_hello hello,
+      {this.hello,
       AppLocalizations_Labels_Templated_contact contact,
       this.numbers,
       this.date})
-      : _hello = hello,
-        _contact = contact;
+      : _contact = contact;
 
-  final AppLocalizations_Labels_Templated_hello _hello;
+  final String hello;
 
   final AppLocalizations_Labels_Templated_contact _contact;
 
@@ -365,17 +495,15 @@ class AppLocalizations_Labels_Templated {
 
   String getByKey(String key) {
     switch (key) {
+      case 'hello':
+        return hello;
       default:
         return '';
     }
   }
 
-  String hello({@required String firstName}) => _hello(
-        firstName: firstName,
-      );
-  String contact(Gender condition, {@required String lastName}) => _contact(
+  String contact(Gender condition) => _contact(
         condition,
-        lastName: lastName,
       );
 }
 
@@ -402,9 +530,18 @@ class AppLocalizations_Labels_Plurals {
 
 class AppLocalizations_Labels {
   const AppLocalizations_Labels(
-      {this.multiline, this.dates, this.templated, this.plurals});
+      {this.multiline,
+      this.drawer,
+      this.auth,
+      this.dates,
+      this.templated,
+      this.plurals});
 
   final String multiline;
+
+  final AppLocalizations_Labels_Drawer drawer;
+
+  final AppLocalizations_Labels_Auth auth;
 
   final AppLocalizations_Labels_Dates dates;
 
