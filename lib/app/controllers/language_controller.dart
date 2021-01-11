@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_getx_app_template/app/localizations.dart';
 import 'package:flutter_getx_app_template/globals.dart';
 import 'package:get/get.dart';
@@ -60,5 +61,32 @@ class LanguageController extends GetxController {
     await store.write('language', value);
     Get.updateLocale(getLocale);
     update();
+  }
+
+  showLocaleDialog() {
+    final labels = AppLocalizations.of(Get.context);
+
+    showDialog(
+      context: Get.context,
+      child: SimpleDialog(
+        title: Text(labels.drawer.language.dialog.title),
+        children: [
+          SimpleDialogOption(
+            child: Text(labels.drawer.language.option.korean),
+            onPressed: () {
+              updateLanguage('ko');
+              Get.back();
+            },
+          ),
+          SimpleDialogOption(
+            child: Text(labels.drawer.language.option.english),
+            onPressed: () {
+              updateLanguage('en');
+              Get.back();
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
