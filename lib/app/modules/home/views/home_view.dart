@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(Icons.notes),
                 title: Text(labels.drawer.menu.notice),
                 onTap: () {
                   Get.toNamed(Routes.NOTICE);
