@@ -19,6 +19,10 @@ part 'app_routes.dart';
 
 class AppPages {
   static const INITIAL = Routes.SPLASH;
+  static const RECOVER_EMAIL = Routes.RECOVERY_EMAIL;
+  static const SIGNIN = Routes.SIGNIN;
+  static const SIGNUP_EMAIL = Routes.SIGNUP_EMAIL;
+  static const RECOVER_PASSWORD = Routes.RECOVERY_PASSWORD;
 
   static final routes = [
     GetPage(

@@ -8,7 +8,6 @@ class AuthController extends GetxController {
   static AuthController get to => Get.find();
   final store = GetStorage();
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -39,8 +38,6 @@ class AuthController extends GetxController {
     logger.d('AuthController close');
   }
 
-  void increment() => count.value++;
-
   UserModel getUser() {
     var userJSON = store.read('USER');
 
@@ -57,5 +54,19 @@ class AuthController extends GetxController {
 
   void signout() async {
     await store.remove('USER');
+  }
+
+  String emailInputValidator(String value) {
+    if (value.isEmail) {
+      return null;
+    }
+    return '올바른 이메일을 입력하세요';
+  }
+
+  String passwordInputValidator(String value) {
+    if (value.isNotEmpty) {
+      return null;
+    }
+    return '올바른 비밀번호를 입력하세요';
   }
 }
