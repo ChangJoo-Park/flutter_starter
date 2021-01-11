@@ -1,3 +1,4 @@
+import 'package:flutter_getx_app_template/app/localizations.dart';
 import 'package:flutter_getx_app_template/app/models/models.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,8 +18,7 @@ class AuthController extends GetxController {
   void onReady() {
     super.onReady();
     logger.d('on ready');
-    UserModel user = getUser();
-    if (user == null) {
+    if (getUser == null) {
       Get.offAndToNamed('/signin');
     } else {
       Get.offAndToNamed('/home');
@@ -38,7 +38,7 @@ class AuthController extends GetxController {
     logger.d('AuthController close');
   }
 
-  UserModel getUser() {
+  UserModel get getUser {
     var userJSON = store.read('USER');
 
     if (userJSON == null) {
@@ -57,16 +57,20 @@ class AuthController extends GetxController {
   }
 
   String emailInputValidator(String value) {
+    final labels = AppLocalizations.of(Get.context);
+
     if (value.isEmail) {
       return null;
     }
-    return '올바른 이메일을 입력하세요';
+    return labels.auth.validation.email;
   }
 
   String passwordInputValidator(String value) {
+    final labels = AppLocalizations.of(Get.context);
+
     if (value.isNotEmpty) {
       return null;
     }
-    return '올바른 비밀번호를 입력하세요';
+    return labels.auth.validation.password;
   }
 }
