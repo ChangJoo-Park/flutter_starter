@@ -4,9 +4,9 @@ GetX 프레임워크를 이용한 Flutter 애플리케이션 템플릿
 
 ## 시작하기
 
-이 프로젝트는 GetX를 최대한 활용하는 프로젝트입니다. GetX 프레임워크의 자세한 사용법은 [이 문서]()를 참고하세요.
+이 프로젝트는 GetX를 최대한 활용하는 프로젝트입니다. GetX 프레임워크의 자세한 사용법은 [이 문서](https://github.com/jonataslaw/getx)를 참고하세요.
 
-프로젝트의 각 부분들을 GetX에서 공식으로 제공하는 [cli]()를 이용합니다.
+프로젝트의 각 부분들을 GetX에서 공식으로 제공하는 [cli](https://github.com/jonataslaw/get_cli)를 이용합니다.
 
 이 템플릿으로 Flutter 애플리케이션 프로젝트를 시작하려면 상단의 **Use This Template** 버튼을 눌러주세요
 
@@ -27,6 +27,8 @@ GetX 프레임워크를 이용한 Flutter 애플리케이션 템플릿
 
 
 ### 다국어 컨트롤러
+
+이 프로젝트에서 다국어 지원은 getx를 사용하지 않습니다. 구글 스프레시트를 이용합니다.
 
 다국어 컨트롤러는 [flutter_sheet_localization](https://pub.dev/packages/flutter_sheet_localization) 라이브러리와 빌드러너를 이용하는 [flutter_sheet_localization_generator ](https://pub.dev/packages/flutter_sheet_localization_generator) 를 사용합니다.
 
