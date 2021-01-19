@@ -15,6 +15,7 @@ abstract class Routes {
   static const POSTS = _Paths.POSTS;
   static const ALBUM = _Paths.ALBUM;
   static const POST = _Paths.POST;
+  static const PHOTOS = _Paths.PHOTOS;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const POSTS = '/posts';
   static const ALBUM = '/album';
   static const POST = '/post/:post';
+  static const PHOTOS = '/photos';
 }

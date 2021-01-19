@@ -6,6 +6,8 @@ import 'package:flutter_getx_app_template/app/modules/home/bindings/home_binding
 import 'package:flutter_getx_app_template/app/modules/home/views/home_view.dart';
 import 'package:flutter_getx_app_template/app/modules/notice/bindings/notice_binding.dart';
 import 'package:flutter_getx_app_template/app/modules/notice/views/notice_view.dart';
+import 'package:flutter_getx_app_template/app/modules/photos/bindings/photos_binding.dart';
+import 'package:flutter_getx_app_template/app/modules/photos/views/photos_view.dart';
 import 'package:flutter_getx_app_template/app/modules/post/bindings/post_binding.dart';
 import 'package:flutter_getx_app_template/app/modules/post/views/post_view.dart';
 import 'package:flutter_getx_app_template/app/modules/posts/bindings/posts_binding.dart';
@@ -101,6 +103,11 @@ class AppPages {
       name: _Paths.POST,
       page: () => PostView(),
       binding: PostBinding(),
+    ),
+    GetPage(
+      name: _Paths.PHOTOS,
+      page: () => PhotosView(),
+      binding: PhotosBinding(),
     ),
   ];
 

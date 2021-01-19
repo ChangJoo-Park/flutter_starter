@@ -15,12 +15,13 @@ class BottomNavigationController extends GetxController {
     currentPageIndex.value = index;
   }
 
-  Widget get currentPage => pages[currentPageIndex.value].page();
+  Widget get currentPage {
+    return pages[currentPageIndex.value].page();
+  }
 
   @override
   void onInit() {
     super.onInit();
-    pages.addAll([]);
   }
 
   @override
