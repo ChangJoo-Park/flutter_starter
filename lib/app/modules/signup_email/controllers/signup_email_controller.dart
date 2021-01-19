@@ -19,9 +19,15 @@ class SignupEmailController extends GetxController {
       TextEditingController(text: '');
 
   @override
-  void onInit() {}
+  void onInit() {
+    super.onInit();
+  }
+
   @override
-  void onReady() {}
+  void onReady() {
+    super.onReady();
+  }
+
   @override
   void onClose() {}
 

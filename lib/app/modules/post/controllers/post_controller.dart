@@ -1,4 +1,3 @@
-import 'package:flutter_getx_app_template/app/modules/post/providers/post_provider.dart';
 import 'package:flutter_getx_app_template/app/modules/post/repositories/post_repositories.dart';
 import 'package:flutter_getx_app_template/app/modules/posts/post_model.dart';
 import 'package:get/get.dart';
@@ -9,7 +8,6 @@ class PostController extends GetxController {
   final RxBool loaded = false.obs;
   @override
   void onInit() {
-    print('on init post controller');
     super.onInit();
   }
 

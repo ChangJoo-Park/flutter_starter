@@ -6,7 +6,6 @@ class PostProvider extends GetConnect {
 
   @override
   void onInit() {
-    print('on init');
     httpClient.defaultDecoder = (map) => Post.fromJson(map);
     httpClient.baseUrl = 'https://jsonplaceholder.typicode.com';
   }

@@ -15,7 +15,7 @@ class LanguageController extends GetxController {
   @override
   void onReady() async {
     setInitialLocalLanguage();
-    super.onInit();
+    super.onReady();
   }
 
   // Retrieves and Sets language based on device settings
@@ -25,7 +25,6 @@ class LanguageController extends GetxController {
       String _deviceLanguage = window.locale.toString();
       _deviceLanguage =
           _deviceLanguage.substring(0, 2); //only get 1st 2 characters
-      print(window.locale.toString());
       updateLanguage(_deviceLanguage);
     }
   }
