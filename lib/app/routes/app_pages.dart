@@ -1,9 +1,15 @@
 import 'package:get/get.dart';
 
+import 'package:flutter_getx_app_template/app/modules/album/bindings/album_binding.dart';
+import 'package:flutter_getx_app_template/app/modules/album/views/album_view.dart';
 import 'package:flutter_getx_app_template/app/modules/home/bindings/home_binding.dart';
 import 'package:flutter_getx_app_template/app/modules/home/views/home_view.dart';
 import 'package:flutter_getx_app_template/app/modules/notice/bindings/notice_binding.dart';
 import 'package:flutter_getx_app_template/app/modules/notice/views/notice_view.dart';
+import 'package:flutter_getx_app_template/app/modules/post/bindings/post_binding.dart';
+import 'package:flutter_getx_app_template/app/modules/post/views/post_view.dart';
+import 'package:flutter_getx_app_template/app/modules/posts/bindings/posts_binding.dart';
+import 'package:flutter_getx_app_template/app/modules/posts/views/posts_view.dart';
 import 'package:flutter_getx_app_template/app/modules/profile/bindings/profile_binding.dart';
 import 'package:flutter_getx_app_template/app/modules/profile/views/profile_view.dart';
 import 'package:flutter_getx_app_template/app/modules/recovery_email/bindings/recovery_email_binding.dart';
@@ -80,6 +86,39 @@ class AppPages {
       name: _Paths.NOTICE,
       page: () => NoticeView(),
       binding: NoticeBinding(),
+    ),
+    GetPage(
+      name: _Paths.POSTS,
+      page: () => PostsView(),
+      binding: PostsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALBUM,
+      page: () => AlbumView(),
+      binding: AlbumBinding(),
+    ),
+    GetPage(
+      name: _Paths.POST,
+      page: () => PostView(),
+      binding: PostBinding(),
+    ),
+  ];
+
+  static final bottomNavigationPages = [
+    GetPage(
+      name: _Paths.POSTS,
+      page: () => PostsView(),
+      binding: PostsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALBUM,
+      page: () => AlbumView(),
+      binding: AlbumBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTING,
+      page: () => SettingView(),
+      binding: SettingBinding(),
     ),
   ];
 }

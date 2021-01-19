@@ -1,15 +1,32 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../routes/app_pages.dart';
 
 class BottomNavigationController extends GetxController {
   static BottomNavigationController get to => Get.find();
-
+  final pages = AppPages.bottomNavigationPages;
   final currentPageIndex = 0.obs;
 
-  @override
-  void onInit() {}
+  void changePage(int index) {
+    if (currentPageIndex.value == index) {
+      return;
+    }
+    currentPageIndex.value = index;
+  }
+
+  Widget get currentPage => pages[currentPageIndex.value].page();
 
   @override
-  void onReady() {}
+  void onInit() {
+    super.onInit();
+    pages.addAll([]);
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+  }
 
   @override
   void onClose() {}

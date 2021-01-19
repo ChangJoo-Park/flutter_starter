@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:flutter_getx_app_template/app/modules/setting/controllers/setting_controller.dart';
+import 'package:flutter_getx_app_template/app/modules/album/controllers/album_controller.dart';
 
-class SettingView extends GetView<SettingController> {
+class AlbumView extends GetView<AlbumController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('SettingView'),
+        title: Text('AlbumView'),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          'SettingView is working',
+          'AlbumView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),

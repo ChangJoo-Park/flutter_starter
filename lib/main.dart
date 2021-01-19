@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
     return GetBuilder<LanguageController>(
       builder: (languageController) => Loading(
         child: GetMaterialApp(
+          defaultTransition: Transition.fade,
           //begin language translation stuff //https://github.com/aloisdeniel/flutter_sheet_localization
           locale: languageController.getLocale, // <- Current locale
           localizationsDelegates: [
